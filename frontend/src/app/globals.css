@@ -3,6 +3,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.primary-accent-gradiant {
+  background: linear-gradient(180deg, #3c16a6 0%, #610094 100%);
+}
+
+.great-gradiant {
+  background: linear-gradient(180deg, #101010 0%, #9d7bfb 30.77%, #610094 76.44%, #101010 97.12%);
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

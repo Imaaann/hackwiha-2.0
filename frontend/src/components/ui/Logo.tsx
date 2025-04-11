@@ -20,8 +20,8 @@ function Logo(props: JSX.IntrinsicAttributes & { size: number }) {
         fill="black"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M97.8541 53.8047L114.08 28L109.516 48.2854L125.111 39.9537L114.968 54.5338L130 54.952L103.035 65.7647L102.988 59.5159L89.6884 65.7514L96.1029 46.8655L97.8541 53.8047ZM64.1629 37.8906L70.9556 34.8326L82.8027 46.4743L87.3335 61.4061L76.8657 66.1165L70.4113 55.6154L32.667 72.6103L30 66.693L67.7448 49.7048L64.1629 37.8906Z"
         fill="black"
       />
