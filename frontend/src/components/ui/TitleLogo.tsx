@@ -1,10 +1,12 @@
 import Logo from "./Logo";
 import { ModeToggle } from "./mode-toggle";
 
-function TitleLogo() {
+function TitleLogo({ isAbsolute = true, size = 80 }: { isAbsolute?: boolean; size?: number }) {
+  const absolutePosition = isAbsolute ? "absolute top-9 left-9" : "";
+  const textSize = size < 80 ? "text-3xl" : "text-xl";
   return (
-    <div className="absolute flex gap-6 top-9 left-9 items-center text-3xl z-10">
-      <Logo size={80} />
+    <div className={`flex gap-6 items-center ${textSize} z-10 ${absolutePosition}`}>
+      <Logo size={size} />
       MindForge
       <ModeToggle />
     </div>

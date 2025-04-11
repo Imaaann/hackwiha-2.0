@@ -11,6 +11,10 @@
   background: linear-gradient(180deg, #101010 0%, #9d7bfb 30.77%, #610094 76.44%, #101010 97.12%);
 }
 
+.accent-shadow {
+  box-shadow: 0px 4px 50px 0px #610094;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

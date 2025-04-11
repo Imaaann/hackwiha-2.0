@@ -1,7 +1,7 @@
+import MainButton from "@/components/main-button";
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/ui/Logo";
 import TitleLogo from "@/components/ui/TitleLogo";
-import { geistMono } from "@/lib/utils";
 
 export default function Home() {
   return (
@@ -12,13 +12,7 @@ export default function Home() {
           <h1 className="text-4xl max-w-sm text-center">
             The <span className="text-primary">FULL</span> Learning Experience
           </h1>
-          <Button
-            variant={"default"}
-            size={"lg"}
-            className={`rounded-2xl primary-accent-gradiant text-white max-w-fit text-2xl px-4 py-2 ${geistMono.className} hover:scale-110`}
-          >
-            Start
-          </Button>
+          <MainButton />
           <Button variant={"ghost"} size={"sm"} className="rounded-lg text-primary text-lg">
             log in
           </Button>
