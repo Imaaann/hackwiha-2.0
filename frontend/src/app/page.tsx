@@ -1,9 +1,9 @@
-
+import TitleLogo from "@/components/ui/TitleLogo";
 
 export default function Home() {
   return (
-<div>
-  <h1>Hackiwha 2.0</h1>
-</div>
+    <div>
+      <TitleLogo />
+    </div>
   );
 }
