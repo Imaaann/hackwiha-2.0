@@ -2,6 +2,7 @@
 import { redirect } from "next/navigation";
 import { Button } from "./ui/button";
 import TitleLogo from "./ui/TitleLogo";
+import SelectField from "./SelectField";
 
 function Header() {
   return (
@@ -27,9 +28,7 @@ function Header() {
       >
         Resources
       </Button>
-      <Button variant={"ghost"} size={"sm"} className="rounded-lg text-foreground text-md">
-        Field: <span className="text-primary">CS</span>
-      </Button>
+      <SelectField />
     </header>
   );
 }

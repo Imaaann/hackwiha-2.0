@@ -1,5 +1,4 @@
 import { Button } from "./ui/button";
-import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { AlertDialog, AlertDialogAction } from "@radix-ui/react-alert-dialog";
 import {
@@ -12,15 +11,16 @@ import {
   AlertDialogTrigger,
 } from "./ui/alert-dialog";
 import { Textarea } from "./ui/textarea";
-import { ResourceTypeSelect } from "./ResourceTypeSelect";
+import ResourceTypeSelect from "./ResourceTypeSelect";
+import ComposedInput from "./ComposedInput";
 
 function CreateResource() {
   return (
     <AlertDialog>
-      <AlertDialogTrigger>
+      <AlertDialogTrigger asChild>
         <Button className=" text-foreground text-lg py-2 px-4">Create</Button>
       </AlertDialogTrigger>
-      <AlertDialogContent className="h-[375px] w-[425px] self-center secondary-shadow p-4 rounded-md">
+      <AlertDialogContent className="h-[425px] w-[425px] self-center secondary-shadow p-4 rounded-md">
         <AlertDialogHeader>
           <AlertDialogTitle>Create new resource</AlertDialogTitle>
           <AlertDialogDescription>
@@ -29,12 +29,7 @@ function CreateResource() {
         </AlertDialogHeader>
         <hr className="my-2" />
         <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4 ">
-            <Label htmlFor="name" className="text-right">
-              Title:
-            </Label>
-            <Input id="title" className="col-span-3" />
-          </div>
+          <ComposedInput label="Title" id="title" />
           <div className="grid grid-cols-4 items-start gap-4">
             <Label htmlFor="description" className="text-right">
               Description:
@@ -44,11 +39,7 @@ function CreateResource() {
           <ResourceTypeSelect />
         </div>
         <AlertDialogFooter className="self-center">
-          <AlertDialogCancel>
-            <Button variant="outline" className="text-foreground">
-              Cancel
-            </Button>
-          </AlertDialogCancel>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
           <AlertDialogAction>
             <Button type="submit" className="text-foreground">
               Save changes

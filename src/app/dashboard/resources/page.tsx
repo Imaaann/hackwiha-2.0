@@ -1,9 +1,9 @@
 "use client";
+import ComposedInput from "@/components/ComposedInput";
 import CreateResource from "@/components/createResource";
 import ResourceCard, { resourceCardProps } from "@/components/resource";
 import TagSelect from "@/components/TagSelect";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+
 import { mockResources } from "@/lib/mock";
 import { useEffect, useState } from "react";
 
@@ -18,12 +18,7 @@ function Home() {
   return (
     <div className="mt-9 ml-12 flex flex-col gap-6 ">
       <div className="self-center gap-4 flex flex-col">
-        <div className="grid grid-cols-5 items-center gap-4 max-w-3xl">
-          <Label htmlFor="search" className="text-right text-2xl col-span-2">
-            Browse Resources
-          </Label>
-          <Input id="search" className="col-span-3" />
-        </div>
+        <ComposedInput label="Browse Resources" id="resources" />
         <TagSelect />
       </div>
       <hr />
