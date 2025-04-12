@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import Tag from "./Tag";
+import { Label } from "./ui/label";
+import { Input } from "./ui/input";
 
 function TagSelect() {
   const [tags] = useState<string[]>([]);
@@ -12,12 +14,13 @@ function TagSelect() {
 
   return (
     <>
-      <div className="flex flex-row gap-4 px-10">
-        <h1 className="text-3xl">Tags:</h1>
-        <input
-          type="Text"
-          className="text-md px-2 py-0.5 bg-background border border-primary rounded-full w-xl text-2xl"
-          placeholder="Search..."
+      <div className="grid grid-cols-5 items-center gap-4 max-w-3xl">
+        <Label htmlFor="tags" className="text-right text-2xl col-span-2">
+          Add Tags
+        </Label>
+        <Input
+          id="tags"
+          className="col-span-3"
           onChange={(e) => {
             setBuffer(e.target.value);
           }}
@@ -32,9 +35,10 @@ function TagSelect() {
         />
       </div>
       <div className="flex flex-row gap-12 max-w-screen flex-wrap overflow-auto py-2 px-1 text-md">
-        {tags.map((tag, index) => (
-          <Tag name={tag} key={index} />
-        ))}
+        {tags.map((tag, index) => {
+          if (index < 6) return <Tag name={tag} key={index} />;
+          if (index == 6) return <Tag name="..." key={index} />;
+        })}
       </div>
     </>
   );
